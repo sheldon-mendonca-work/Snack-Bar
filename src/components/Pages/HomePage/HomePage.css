@@ -1,0 +1,36 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  table{
+    margin: 2rem 0;
+  }
+
+  th, td{
+    padding: 1rem;
+  }
+
+  .active{
+    background-color: #777;
+    
+  }
+
+  th:hover{
+    background-color: #ddd;
+    cursor: pointer;
+    border-color: purple;
+  }
+
+  .snack-input-div{
+    width: 20rem;
+    height: 4rem;
+    display: inline-block;
+  }
+
+  .snack-input{
+    height: 100%;
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+  }

@@ -13,12 +13,13 @@ const HomePage = () => {
     
     const getProductTable = () => {
         let tempProductList = productList;
+        let searchValue = searchProduct.trim().toLowerCase();
 
-        if(searchProduct.length > 0){
+        if(searchValue.length > 0){
             tempProductList = tempProductList.filter(({product_name, ingredients}) => (
-                product_name.toLowerCase().indexOf(searchProduct) !== -1
+                product_name.toLowerCase().indexOf(searchValue) !== -1
                 ||
-                ingredients.some(item => item.toLowerCase().indexOf(searchProduct) !== -1)
+                ingredients.some(item => item.toLowerCase().indexOf(searchValue) !== -1)
 
             ))
         }
@@ -97,7 +98,7 @@ const HomePage = () => {
 
 
     const searchInputHandler = (event) => {
-        dispatchProduct({type: 'UPDATE_SEARCH_BAR', value: event.target.value.trim().toLowerCase()});
+        dispatchProduct({type: 'UPDATE_SEARCH_BAR', value: event.target.value});
     }
     
     return <div>
